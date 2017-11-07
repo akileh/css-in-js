@@ -3,6 +3,7 @@
 Aki Lehtinen
 
 ---
+class: top
 # (Some) Problems with CSS
 * Global namespace
 * Dead code
@@ -45,7 +46,7 @@ Aki Lehtinen
 
 ---
 
-# (Some) Alternatives
+# Alternatives
 
 [Aphrodite](https://github.com/Khan/aphrodite)
 [Emotion](https://github.com/emotion-js/emotion)
@@ -164,6 +165,7 @@ export default props => {
 
 ???
 * CSS nees className combine logic before render
+* Only one button!
 
 ---
 class: code
