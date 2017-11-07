@@ -45,33 +45,6 @@ class: top
 * External css or inline/head.
 
 ---
-
-# Alternatives
-
-[Aphrodite](https://github.com/Khan/aphrodite)
-[Emotion](https://github.com/emotion-js/emotion)
-[Fela](https://github.com/rofrischmann/fela)
-[Glamor](https://github.com/threepointone/glamor)
-[Glamorous](https://github.com/paypal/glamorous)
-
-[JSS](https://github.com/cssinjs/jss)
-[jsxstyle](https://github.com/smyte/jsxstyle)
-[Radium](https://github.com/FormidableLabs/radium)
-[Styletron](https://github.com/rtsao/styletron)
-
-???
-* Who has used some of these libraries?
-* Who has used similar not in the list? 
-
---
-
-CSS in JS techniques comparison and examples: [https://github.com/MicheleBertoli/css-in-js](https://github.com/MicheleBertoli/css-in-js)
-
-???
-***
-  * Not a comprehensive list.
-
----
 # Styled Components
 
 *Visual primitives for the component age*
@@ -289,7 +262,10 @@ import styled from 'styled-components'
 
 const Button = styled.button`
   border-radius: ${({ theme }) => theme.borderRadius};
-  background-color: ${({ primary, theme }) => primary ? theme.colors.primary : theme.colors.secondary};
+  background-color: ${({ primary, theme }) => primary
+    ? theme.colors.primary
+    : theme.colors.secondary
+  };
 `
 
 export default props => {
@@ -311,6 +287,34 @@ export default props => {
 ???
 * cli linting works
 * source map
+
+---
+
+# Alternatives
+
+[Aphrodite](https://github.com/Khan/aphrodite)
+[Emotion](https://github.com/emotion-js/emotion)
+[Fela](https://github.com/rofrischmann/fela)
+[Glamor](https://github.com/threepointone/glamor)
+[Glamorous](https://github.com/paypal/glamorous)
+
+[JSS](https://github.com/cssinjs/jss)
+[jsxstyle](https://github.com/smyte/jsxstyle)
+[Radium](https://github.com/FormidableLabs/radium)
+[Styletron](https://github.com/rtsao/styletron)
+
+???
+* Who has used some of these libraries?
+* Who has used similar not in the list? 
+
+--
+
+CSS in JS techniques comparison and examples: [https://github.com/MicheleBertoli/css-in-js](https://github.com/MicheleBertoli/css-in-js)
+
+???
+***
+  * Not a comprehensive list.
+
 
 ---
 count: false
