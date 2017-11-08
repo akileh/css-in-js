@@ -1,6 +1,6 @@
 # CSS in JS
 ## with styled components
-Aki Lehtinen
+Aki Lehtinen @ Futurice
 
 ???
 
