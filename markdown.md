@@ -3,24 +3,30 @@
 Aki Lehtinen
 
 ???
-* what is css-in-js?
-  * no css files
-  * objects, strings, tagged template literals etc.
-  * inline styles with "style"-prop or generated class names
-* Composing multiple style objects.
-* Style props as array.
-* Css inline or separate file.
-* External css or inline/head.
+
+* What is css-in-js?
+  * No css files.
+  * Objects, strings, tagged template literals etc.
+  * Inline styles with "style"-prop or generated class names.
+***
+* Techniques:
+  * Composing multiple style objects.
+  * Style props as array.
+  * Css inline or separate file.
+  * External css or inline/head.
 
 ---
 
-class: top
+class: top, left
 # (Some) Problems with CSS
+
 * Global namespace
-* Dead code
-* Class dependencies
 
 --
+* Dead code
+
+--
+* Class dependencies
 
 ```html
 <button type="button" class="btn btn-primary btn-large">
@@ -41,14 +47,18 @@ class: top
 * Speakerdeck presentation was inspiration for many libraries
 
 ---
-
-# Styled Components
+class: styled-components
+![logo](sc-logo.png)
 
 *Visual primitives for the component age*
 
 *Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS, styled-components allows you to write actual CSS code to style your components.*
 
 [https://www.styled-components.com](https://www.styled-components.com)
+
+???
+* Maybe not se recent anymore
+* What really differentiates this from other css-in-js is *tagged template literals* (instead of objects)
 
 ---
 class: code
@@ -83,8 +93,10 @@ export default props => {
 ```
 
 ???
-* Declerative jsx.
 * Tagged template literals. A way to call function giving split strings and spread args as params.
+* Allows passing variables to functions inside it (theme, props).
+* Declerative jsx.
+* Basically: css strings with interpolated functions.
 
 ---
 
@@ -112,6 +124,11 @@ export default props => {
 
 ```
 
+???
+* Html was declarative.
+* Nowadays divs everywhere!
+* Bad example, lots of difs would better demonstrate problem.
+
 ---
 
 class: code
@@ -135,8 +152,9 @@ export default props => {
 ```
 
 ???
-* CSS nees className combine logic before render
+* Killer feature.
 * Only one button!
+* Css nees className combine logic before render
 
 ---
 
@@ -164,6 +182,10 @@ export default props => {
   )
 }
 ```
+
+???
+* Button from previous example.
+* Could be also done as another prop.
 
 ---
 
@@ -193,8 +215,10 @@ export default props => {
 ```
 
 ???
-* requires passing classname in component
-* deep styling with nesting
+* Requires passing classname in component.
+* Deep styling with nesting.
+* Good for third party components.
+* Style is removed with component (dead code elimination).
 
 ---
 
@@ -220,7 +244,7 @@ export default props => {
 ```
 
 ???
-* declarative
+* Declarative.
 
 ---
 
@@ -253,12 +277,14 @@ export default () => {
 ```
 
 ???
-* just an object, nothing to do with css
+* Just an object, nothing to do with css.
+* Passed via react context to styled-components.
+* Just like react-router etc.
 
 ---
 
 class: code
-## Using theme
+## Using the theme
 ```javascript
 import * as React from 'react'
 import styled from 'styled-components'
@@ -280,17 +306,37 @@ export default props => {
 }
 ```
 
----
+???
+* All functions receive theme as "props".
+* Same values on different components.
+* With css the value has to be in css and js.
+* If needed elsewhere, just export the object and use directly.
+* Can be used without ThemeProvider, just an object.
 
+---
+class: top, left
 # Cons
 * No linting in editor
+
+???
+* Stylelint wasn't working well yet.
+
+* Cli linting works.
+--
 * No source map
+
+???
+* Emotion has it, maybe under development.
+--
 * No external css
+
+???
+* Emotion and some other libs have it.
+--
 * Extra components in chrome dev tools
 
 ???
-* cli linting works
-* source map
+* Harder to debug, componentes named "styled" next to your component.
 
 ---
 
@@ -318,6 +364,17 @@ CSS in JS techniques comparison and examples: [https://github.com/MicheleBertoli
 ???
 ***
   * Not a comprehensive list.
+***
+* What is css-in-js?
+* No css files.
+* Objects, strings, tagged template literals etc.
+* Inline styles with "style"-prop or generated class names.
+***
+* Techniques:
+* Composing multiple style objects..
+* Style props as array.
+* Css inline or separate file.
+* External css or inline/head.
 
 ---
 
@@ -345,3 +402,6 @@ export default props => {
   )
 }
 ```
+
+???
+* Does what mixins do in sass/less.
