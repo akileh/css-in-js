@@ -2,12 +2,23 @@
 ## with styled components
 Aki Lehtinen
 
+???
+* what is css-in-js?
+  * no css files
+  * objects, strings, tagged template literals etc.
+  * inline styles with "style"-prop or generated class names
+* Composing multiple style objects.
+* Style props as array.
+* Css inline or separate file.
+* External css or inline/head.
+
 ---
+
 class: top
 # (Some) Problems with CSS
 * Global namespace
 * Dead code
-* Dependencies
+* Class dependencies
 
 --
 
@@ -30,21 +41,7 @@ class: top
 * Speakerdeck presentation was inspiration for many libraries
 
 ---
-# CSS in JS
 
-// TODO?
-
-* Styles as objects OR tagged template literals
-* Style prop OR class with generated classes
-
-???
-***
-* Composing multiple style objects.
-* Style props as array.
-* Css inline or separate file.
-* External css or inline/head.
-
----
 # Styled Components
 
 *Visual primitives for the component age*
@@ -90,6 +87,7 @@ export default props => {
 * Tagged template literals. A way to call function giving split strings and spread args as params.
 
 ---
+
 class: code
 ```javascript
 // styled-components
@@ -114,8 +112,8 @@ export default props => {
 
 ```
 
-
 ---
+
 class: code
 ## Props
 ```javascript
@@ -141,6 +139,7 @@ export default props => {
 * Only one button!
 
 ---
+
 class: code
 ## Extending
 ```javascript
@@ -167,6 +166,7 @@ export default props => {
 ```
 
 ---
+
 class: code
 ## Styling components
 ```javascript
@@ -197,6 +197,7 @@ export default props => {
 * deep styling with nesting
 
 ---
+
 class: code
 ## Additional props
 ```javascript
@@ -222,6 +223,7 @@ export default props => {
 * declarative
 
 ---
+
 class: code
 ## Theming
 ```javascript
@@ -254,6 +256,7 @@ export default () => {
 * just an object, nothing to do with css
 
 ---
+
 class: code
 ## Using theme
 ```javascript
@@ -278,6 +281,7 @@ export default props => {
 ```
 
 ---
+
 # Cons
 * No linting in editor
 * No source map
@@ -315,8 +319,8 @@ CSS in JS techniques comparison and examples: [https://github.com/MicheleBertoli
 ***
   * Not a comprehensive list.
 
-
 ---
+
 count: false
 class: code
 # Polished
